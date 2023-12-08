@@ -7,8 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSun } from '@fortawesome/free-solid-svg-icons'
 import { Container } from "@mui/material";
 import Grid from "@mui/material";
-import Barranav from "./Barranav";
-
+import { AppBar, Toolbar, IconButton, Typography, Stack, Button } from "@mui/material";
+import RiceBowlIcon from '@mui/icons-material/RiceBowl';
 
 function App() {
 
@@ -69,26 +69,36 @@ function App() {
     }
 
     return (
+        <div>
         
-      <Container sx={{bgcolor: "tomato"}}> 
-      <Barranav>hola</Barranav>
-           <div>
-       <div class="container">
-         <div class="row center">
-           <div class="col"><button onClick={showCards}>Menu</button></div>
-           <div class="col"><button onClick={showLists}>Interfaz 2</button></div>  
-           <div class="col"><button onClick={showReservation}>Interfaz 3</button></div>  
-           <div class="col"><button onClick={next}>Next</button></div> 
-        </div>
-    </div>  
             
+            <AppBar position='static' >
+                <Toolbar sx={{ justifyContent: 'space-between'}}>
+                    <box>
+                    <IconButton size='large' edge='start' color='inherit' aria-label='logo'>
+                        <RiceBowlIcon />
+                    </IconButton>
+                    <Typography variant="h4" component='div' xs={{ flexGrow: 1 }}>
+                        Bisonsushi
+                    </Typography>
+                    </box>
+                    <box>
+                    <Stack direction="row" spacing={2} >
+                            
+                        <Button color='inherit' onClick={showCards}>Menu</Button>
+                        <Button color='inherit' onClick={showLists}>Reservaciones</Button>
+                        <Button color='inherit' onClick={showReservation}>Contactanos</Button>
+                    </Stack>
+                    </box>
+                </Toolbar>
+            </AppBar>
+
             
 
 
     {ui === 0 ? platillos.map(createCard) : ui === 1 ? platillos.map(createLists) :  <h1>prueba</h1> }
 
         </div>
-      </Container>
        
  
     );

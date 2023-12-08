@@ -1,9 +1,7 @@
 body {
   font-family: sans-serif;
   margin: 0 auto;
-  padding: 25px;
-  max-width: 400px;
-  min-width: 400px;
+  
   background-color: #D9E5D6;
   text-align: center;
 }
@@ -20,6 +18,9 @@ body {
 }
 
 .card {
+  padding: 25px;
+  max-width: 400px;
+  min-width: 400px;
   border-radius: 25px;
   position: relative;
   padding: 0px 15px;
