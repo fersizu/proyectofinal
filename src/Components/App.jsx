@@ -9,6 +9,7 @@ import { AppBar, Toolbar, IconButton, Typography, Stack, Button } from "@mui/mat
 import RiceBowlIcon from '@mui/icons-material/RiceBowl';
 import Formulario from "./Formulario";
 import ComboBox from "./Calendario";
+import Contacto from "./Contacto";
 
 function App() {
 
@@ -91,7 +92,7 @@ function App() {
             
 
 
-    {ui === 0 ? platillos.map(createCard) : ui === 1 ? <Formulario/> :  <h1>prueba</h1> }
+    {ui === 0 ? platillos.map(createCard) : ui === 1 ? <Formulario/> : <Contacto/>  }
 
         
         </div>
