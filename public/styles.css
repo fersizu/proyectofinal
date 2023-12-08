@@ -1,9 +1,11 @@
 body {
+  
   font-family: sans-serif;
   margin: 0 auto;
-  
-  background-color: #D9E5D6;
   text-align: center;
+  background-color: #D9E5D6;
+ 
+  
 }
 
 .inp {
@@ -29,6 +31,9 @@ body {
   height: 200px;
   box-shadow: 0 2px 5px #ccc;
   text-align: left;
+  margin: 0 auto;
+  padding: 25px;
+  
 }
 
 .top {

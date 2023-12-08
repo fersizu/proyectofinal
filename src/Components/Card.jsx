@@ -12,9 +12,10 @@ function Card(props) {
         <Avatar image={props.image} />
       </div>
       <Details costo={props.costo} descr={props.descr} />
-      <Fab onClick={props.deleteCard}>
+   {/*  <Fab onClick={props.deleteCard}>
         +
       </Fab>
+      */}
     </div>
   );
 }

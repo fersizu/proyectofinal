@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import ComboBox from "./Calendario";
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import { Box } from "@mui/material";
 
 function Formulario(props) {
   const [reservar, setReservar] = useState(false);
@@ -19,7 +20,6 @@ function Formulario(props) {
         <Stack sx={{ width: '100%' }} spacing={2}>
           <Alert severity="success">Reservación exitosa, {nombre}</Alert>
         </Stack>
-        <h1>prueba</h1>
       </div>
     )
   };
@@ -37,9 +37,9 @@ function Formulario(props) {
   ];
 
   return (
-    <div>
-      {reservar && imprimirReservacion()}
-
+    <Box>
+    {reservar && imprimirReservacion()}
+    <Box sx={{padding: "30px"}}>
       <TextField
         className="inp"
         variant="outlined"
@@ -59,10 +59,11 @@ function Formulario(props) {
       <ComboBox opciones={arregloDias} />
       <ComboBox opciones={arregloHoras} />
 
-      <Button variant="contained" onClick={reservado}>
+      <Button variant="contained" onClick={reservado} sx={{marginTop:"10px"}}>
         Submit
       </Button>
-    </div>
+      </Box>
+      </Box>
   );
 }
 
