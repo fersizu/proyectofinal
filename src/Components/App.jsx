@@ -3,14 +3,23 @@ import List from "./List";
 import Card from "./Card";
 import FormTarjetas from "./FormTarjetas";
 import Menu from "./Menu";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSun } from '@fortawesome/free-solid-svg-icons'
+import { Container } from "@mui/material";
+import Grid from "@mui/material";
+import Barranav from "./Barranav";
+
 
 function App() {
+
+
     // Arreglo de objetos con los datos de los platillos
     const [platillos] = React.useState(Menu);
 
     //Funcion para crear Tarjetas
     function createCard(platillo) {
         return (
+            
             <Card 
                 key={platillo.id}
                 nombre={platillo.nombre} 
@@ -18,6 +27,7 @@ function App() {
                 costo={platillo.costo} 
                 descr={platillo.descr} 
             />
+            
         );
     }
 
@@ -59,20 +69,28 @@ function App() {
     }
 
     return (
-       
-    <div>
+        
+      <Container sx={{bgcolor: "tomato"}}> 
+      <Barranav>hola</Barranav>
+           <div>
        <div class="container">
-         <div class="row">
-           <div class="col-xl"><button onClick={showCards}>Menu</button></div>
-           <div class="col-xl"><button onClick={showLists}>Interfaz 2</button></div>  
-           <div class="col-xl"><button onClick={showReservation}>Interfaz 3</button></div>  
-           <div class="col-xl"><button onClick={next}>Next</button></div> 
+         <div class="row center">
+           <div class="col"><button onClick={showCards}>Menu</button></div>
+           <div class="col"><button onClick={showLists}>Interfaz 2</button></div>  
+           <div class="col"><button onClick={showReservation}>Interfaz 3</button></div>  
+           <div class="col"><button onClick={next}>Next</button></div> 
         </div>
     </div>  
             
-        {ui === 0 ? platillos.map(createCard) : ui === 1 ? platillos.map(createLists) : <h1>Hello</h1> }
+            
+
+
+    {ui === 0 ? platillos.map(createCard) : ui === 1 ? platillos.map(createLists) :  <h1>prueba</h1> }
 
         </div>
+      </Container>
+       
+ 
     );
 }
 
