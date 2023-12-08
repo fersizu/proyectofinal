@@ -3,19 +3,19 @@ import List from "./List";
 import Card from "./Card";
 import FormTarjetas from "./FormTarjetas";
 import Menu from "./Menu";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSun } from '@fortawesome/free-solid-svg-icons'
 import { Container } from "@mui/material";
 import Grid from "@mui/material";
 import { AppBar, Toolbar, IconButton, Typography, Stack, Button } from "@mui/material";
 import RiceBowlIcon from '@mui/icons-material/RiceBowl';
-import Calendario from "./Calendario";
+import Formulario from "./Formulario";
+import ComboBox from "./Calendario";
 
 function App() {
 
 
     // Arreglo de objetos con los datos de los platillos
     const [platillos] = React.useState(Menu);
+    //Variable para reservar
 
     //Funcion para crear Tarjetas
     function createCard(platillo) {
@@ -32,8 +32,9 @@ function App() {
         );
     }
 
+    
 
-     
+
     // Variable de control de estado para la interfaz
     const [ui, setUI] = useState(0);
 
@@ -53,6 +54,7 @@ function App() {
 
     // Funcion para imprimir listas (PRUEBA, no es necesario), utiliza el valor 1
     function showCalendar(){
+        
         setUI(1);
     }
 
@@ -89,7 +91,7 @@ function App() {
             
 
 
-    {ui === 0 ? platillos.map(createCard) : ui === 1 ? <Calendario/> :  <h1>prueba</h1> }
+    {ui === 0 ? platillos.map(createCard) : ui === 1 ? <Formulario/> :  <h1>prueba</h1> }
 
         
         </div>
