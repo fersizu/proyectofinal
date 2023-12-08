@@ -9,6 +9,7 @@ import { Container } from "@mui/material";
 import Grid from "@mui/material";
 import { AppBar, Toolbar, IconButton, Typography, Stack, Button } from "@mui/material";
 import RiceBowlIcon from '@mui/icons-material/RiceBowl';
+import Calendario from "./Calendario";
 
 function App() {
 
@@ -31,15 +32,7 @@ function App() {
         );
     }
 
-    //Funcion para crear Listas (PRUEBA, no es necesario)
-    function createLists(){
-      return (
-            <List 
-            book1="El señor de los anillos"
-            book2="Harry Potter"
-            book3="El alquimista"/>
-      );
-    }
+
      
     // Variable de control de estado para la interfaz
     const [ui, setUI] = useState(0);
@@ -59,7 +52,7 @@ function App() {
     }
 
     // Funcion para imprimir listas (PRUEBA, no es necesario), utiliza el valor 1
-    function showLists(){
+    function showCalendar(){
         setUI(1);
     }
 
@@ -86,7 +79,7 @@ function App() {
                     <Stack direction="row" spacing={2} >
                             
                         <Button color='inherit' onClick={showCards}>Menu</Button>
-                        <Button color='inherit' onClick={showLists}>Reservaciones</Button>
+                        <Button color='inherit' onClick={showCalendar}>Reservaciones</Button>
                         <Button color='inherit' onClick={showReservation}>Contactanos</Button>
                     </Stack>
                     </box>
@@ -96,8 +89,9 @@ function App() {
             
 
 
-    {ui === 0 ? platillos.map(createCard) : ui === 1 ? platillos.map(createLists) :  <h1>prueba</h1> }
+    {ui === 0 ? platillos.map(createCard) : ui === 1 ? <Calendario/> :  <h1>prueba</h1> }
 
+        
         </div>
        
  
