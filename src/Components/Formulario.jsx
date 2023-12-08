@@ -2,13 +2,26 @@ import React,{ useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import ComboBox from "./Calendario";
-
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 
 function Formulario(props) {
 
-  const [reservado,setReservar] = useState (0);
-
+  const [reservar,setReservar] = useState (false);
+  const reservado = () => {
+    setReservar(!reservar)
+  };
   
+  function imprimirReservacion () {
+    return (
+      <div>
+      <Stack sx={{ width: '100%' }} spacing={2}>
+        <Alert severity="success">This is a success alert — check it out!</Alert>
+      </Stack>
+      <h1>prueba</h1>
+      </div>
+    )
+  };
 
 
   // arreglo de dias
@@ -22,12 +35,14 @@ function Formulario(props) {
 
   return (
     <div>
+      {reservar && imprimirReservacion()}
+
       <TextField
         className="inp"
         variant="outlined"
         label="Nombre"
         onChange={props.nameHandler}
-        name="fName"
+        name="Name"
         placeholder="Nombre"
       />
       <TextField
@@ -42,10 +57,11 @@ function Formulario(props) {
       <ComboBox opciones={arregloHoras} />
 
 
-      <Button variant="contained" onClick={setReservar}>
+
+      <Button variant="contained" onClick={reservado}>
         Submit
       </Button>
-
+    
     </div>
   );
 }
